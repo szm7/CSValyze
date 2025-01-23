@@ -9,6 +9,25 @@ const ResultPage = () => {
   const [error, setError] = useState(null);
   const [activeTab, setActiveTab] = useState('summary');
 
+  const [showVisualization, setShowVisualization] = useState(false);
+  const [showChatGPTModal, setShowChatGPTModal] = useState(false);
+
+  const handleVisualizationClick = () => {
+    setShowVisualization(prevState => !prevState);
+  };
+
+  const handleChatGPTClick = () => {
+    setShowChatGPTModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setShowChatGPTModal(false);
+  };
+
+  const handleNextClick = () => {
+    navigate('/'); // IDK THE PATH TO BE FOR NEXT CLICK
+  };
+
   // Navigation and location hooks
   const location = useLocation();
   const navigate = useNavigate();
